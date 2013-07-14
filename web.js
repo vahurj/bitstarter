@@ -1,11 +1,9 @@
 var fs = require('fs');
 
-var buf = new Buffer(256);
+var contents = fs.readFileSync("index.html");
+var buf = new Buffer(contents);
 
-var contents = fs.readFileSync('./index.html', 'ascii');
-
-var reply = buf.toString('ascii', contents);
-
+var reply = buf.toString('utf8', contents);
 
 
 var express = require('express');
