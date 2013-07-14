@@ -3,7 +3,7 @@ var fs = require('fs');
 var contents = fs.readFileSync('./index.html');
 var buf = new Buffer(contents);
 
-var reply = buf.toString('utf8', contents);
+var reply = buf.toString('utf8');
 
 
 var express = require('express');
