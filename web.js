@@ -2,8 +2,12 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
+var replybuffer = new Buffer(256);
+
+var reply = replybuffer.toString('utf8', fs.readFileSync('index.html'));
+
 app.get('/', function(request, response) {
-   var reply = buf.toString(fs.readFileSync('inidex.html');
+
    response.send(reply);
    //  response.send('Hello World 2!');
 });
