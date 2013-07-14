@@ -1,14 +1,15 @@
 var fs = require('fs');
 
-var express = require('express');
-
-var app = express.createServer(express.logger());
-
 var buf = new Buffer(256);
 
-var contents = fs.readFileSync('index.html');
+var contents = fs.readFileSync('./index.html', 'ascii');
 
 var reply = buf.toString('ascii', contents);
+
+
+
+var express = require('express');
+var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 
