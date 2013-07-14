@@ -1,10 +1,12 @@
+var fs = require('fs');
+
 var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var replybuffer = new Buffer(256);
+var buf = new Buffer(256);
 
-var reply = replybuffer.toString('utf8', fs.readFileSync('index.html'));
+var reply = buf.toString('utf8', fs.readFileSync('index.html'));
 
 app.get('/', function(request, response) {
 
