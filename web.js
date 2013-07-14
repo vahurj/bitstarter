@@ -8,7 +8,7 @@ var buf = new Buffer(256);
 
 var contents = fs.readFileSync('index.html');
 
-var reply = buf.toString('utf8', contents);
+var reply = buf.toString('ascii', contents);
 
 app.get('/', function(request, response) {
 
